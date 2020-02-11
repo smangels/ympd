@@ -6,7 +6,7 @@ RUN cmake ..
 RUN make
 
 FROM alpine:3.5
-RUN apk add  --no-cache libmpdclient openssl
+RUN apk add  --no-cache libmpdclient openssl curl
 EXPOSE 8080
 COPY --from=0 /app/build/ympd /usr/bin/ympd
 COPY --from=0 /app/build/mkdata /usr/bin/mkdata

@@ -1,0 +1,13 @@
+version: "3.7"
+
+services:
+  ympd:
+    container_name: 'ympd-web'
+    image: smangels/ympd-server:latest
+    build:
+      context: ./
+    init: true
+    ports:
+      - "8080:8080"
+    command: ympd -h poly.home.mangelsen.se
+
