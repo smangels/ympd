@@ -47,9 +47,19 @@ To run ympd with SSL support:
 # openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 1000 -nodes
 # cat key.pem cert.pem > ssl.pem
 ```
-- tell ympd to use a webport using SSL and where to find the certificate: 
+- tell ympd to use a webport using SSL and where to find the certificate:
 ```
 # ./ympd -w "ssl://8081:/path/to/ssl.pem"
+```
+
+Docker Compose
+--------------
+A docker-compose file is provided that allows one to easily run the service in the background. Ensure that you're using an environment variable pointing to the MPD server of choice.
+
+```
+export MPD_HOST='your.host.domain.com'
+docker build -t smangelsen/ympd-server .
+docker-compose up -d
 ```
 
 Copyright
