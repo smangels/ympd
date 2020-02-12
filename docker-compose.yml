@@ -3,9 +3,7 @@ version: "3.7"
 services:
   ympd:
     container_name: 'ympd-web'
-    image: smangels/ympd-server:latest
-    build:
-      context: ./
+    image: smangelsen/ympd-server:v1.0.0
     init: true
     ports:
       - "8080:8080"
