@@ -9,5 +9,6 @@ services:
     init: true
     ports:
       - "8080:8080"
-    command: ympd -h poly.home.mangelsen.se
+    environment:
+      - MPD_HOST=${MPD_HOST}
 
